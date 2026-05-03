@@ -1,0 +1,13 @@
+## Task List
+
+- [ ] !Edit my ppt "c:/temp/test1.pptx", add a title slide using add_title_slide with  title="My Presentation", and subtitle="Created with Python".
+- [ ] !Edit my ppt "c:/temp/test1.pptx", add a content slide at index 1 using add_slide with the same file_path and layout_index=1.
+- [ ] !Edit my ppt "c:/temp/test1.pptx", Add bullet points to slide 1 using add_bullet_points with title="Main Content", and bullet_points=["First point", "Second point", "Third point"].
+
+
+## Task List
+
+- [ ] !Edit my ppt "c:/temp/test2.pptx", add a content slide at index 0 using add_slide 
+- [ ] !Edit my ppt "c:/temp/test2.pptx", Add bullet points to slide 0 using add_bullet_points with title="Main Content", and bullet_points=["First point", "Second point", "Third point"].
+- [ ] !Edit my ppt "c:/temp/test2.pptx", Set the background colour of slide 0 using set_slide_background_color to #c6c6ff
+- [ ] !Edit my ppt "c:/temp/test2.pptx", Add the image C:\Work\Video\1\Images\ozeki_logo_portable_web_white.jpg to the top right hand corner of the slide

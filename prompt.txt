@@ -1,0 +1,80 @@
+# PowerPoint Editor MCP Tools - Task: Reproduce example.py
+
+Use the MCP PPT Editor tools to create a PowerPoint presentation with the following structure and content.
+Every tool requires a `file_path` parameter as the first argument — the full path to the .pptx file.
+If the file exists it will be loaded; if not, a new presentation will be created.
+After each operation the presentation is automatically saved to that path.
+
+## Steps to Execute
+
+1. **Add a title slide** using `add_title_slide`:
+   - file_path: "c:/temp/_enhanced_presentation_<timestamp>.pptx" (use current timestamp in format YYYYMMDD_HHMMSS)
+   - title: "My Presentation"
+   - subtitle: "Created with Python"
+
+2. **Add a content slide** (slide index 1) using `add_slide` with `layout_index=1`:
+   - file_path: (same as above)
+
+3. **Add bullet points** to slide 1 using `add_bullet_points`:
+   - file_path: (same as above)
+   - title: "Main Content"
+   - bullet_points: ["First point", "Second point", "Third point"]
+
+4. **Add another content slide** (slide index 2) using `add_slide` with `layout_index=1`:
+   - file_path: (same as above)
+
+5. **Add a text box** to slide 2 using `add_text_box`:
+   - file_path: (same as above)
+   - text: "This is a custom text box"
+   - left: 2, top: 3, width: 6, height: 2
+   - font_size: 24
+   - font_color: "FF0000" (red)
+
+6. **Add a rectangle shape** to slide 2 using `add_shape`:
+   - file_path: (same as above)
+   - shape_type: "rectangle"
+   - left: 1, top: 1, width: 3, height: 1.5
+   - fill_color: "00FF00" (green)
+
+7. **Get presentation info** using `get_presentation_info`:
+   - file_path: (same as above)
+
+8. **Duplicate slide 0** (the title slide) using `duplicate_slide`:
+   - file_path: (same as above)
+
+9. **Add a table** to slide 2 using `add_table`:
+   - file_path: (same as above)
+   - rows: 3, cols: 4
+   - left: 1, top: 2, width: 8, height: 3
+
+10. **Set table cell text** using `set_table_cell_text`:
+    - file_path: (same as above)
+    - Table index: 0, Row: 0, Col: 0, text: "Header1"
+    - Table index: 0, Row: 0, Col: 1, text: "Header2"
+    - Table index: 0, Row: 1, Col: 0, text: "Data1"
+    - Table index: 0, Row: 1, Col: 1, text: "Data2"
+
+11. **Set slide background color** for slide 2 using `set_slide_background_color`:
+    - file_path: (same as above)
+    - color: "E6F3FF" (light blue)
+
+12. **Get slide shapes info** for slide 2 using `get_slide_shapes_info`:
+    - file_path: (same as above)
+
+13. **Set text formatting** for the text box (shape_index: 2) on slide 2 using `set_text_formatting`:
+    - file_path: (same as above)
+    - font_name: "Arial"
+    - font_size: 24
+    - font_color: "FF0000" (red)
+    - bold: true
+    - italic: true
+
+## Notes
+- Every tool call requires `file_path` as the first parameter (full path to .pptx)
+- If the file exists, it is loaded; otherwise a new presentation is created
+- The presentation is automatically saved after each operation
+- There is no separate `create_presentation`, `open_presentation`, or `save_presentation` tool
+- Slide indices are 0-based
+- Colors are in hexadecimal format (without #)
+- Position and size values are in inches
+- Ensure the c:/temp/ directory exists before starting

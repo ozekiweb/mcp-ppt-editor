@@ -1,146 +1,135 @@
 #!/usr/bin/env python3
 """
-PowerPoint编辑器使用示例
-演示如何使用PowerPointEditor类创建和编辑PPT
+PowerPoint Editor Usage Example
+Demonstrates how to use PowerPointEditor class to create and edit PPT
+
+Every method now takes file_path as the first parameter. The presentation
+is loaded from file_path if it exists, otherwise a new one is created.
+After applying changes, the presentation is automatically saved back to file_path.
 """
 
+from datetime import datetime
 from tool import PowerPointEditor
 
+
 def main():
-    """示例主函数"""
-    # 创建PowerPoint编辑器实例
     editor = PowerPointEditor()
-    
-    # 1. 创建新的演示文稿
-    print("1. 创建新演示文稿...")
-    result = editor.create_presentation()
-    print(f"结果: {result}")
-    
-    # 2. 添加标题幻灯片
-    print("\n2. 添加标题幻灯片...")
-    result = editor.add_title_slide("我的演示文稿", "使用Python创建")
-    print(f"结果: {result}")
-    
-    # 3. 添加内容幻灯片
-    print("\n3. 添加内容幻灯片...")
-    result = editor.add_slide(1)  # 使用标题和内容布局
-    print(f"结果: {result}")
-    
-    # 4. 在第二张幻灯片添加项目符号内容
-    print("\n4. 添加项目符号内容...")
-    bullet_points = [
-        "第一个要点",
-        "第二个要点", 
-        "第三个要点"
-    ]
-    result = editor.add_bullet_points(1, "主要内容", bullet_points)
-    print(f"结果: {result}")
-    
-    # 5. 添加另一张幻灯片
-    print("\n5. 添加另一张幻灯片...")
-    result = editor.add_slide(1)
-    print(f"结果: {result}")
-    
-    # 6. 在第三张幻灯片添加文本框
-    print("\n6. 添加文本框...")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    file_path = f"c:/temp/_enhanced_presentation_{timestamp}.pptx"
+
+    # 1. Add title slide (creates new presentation since file doesn't exist)
+    print("1. Adding title slide...")
+    result = editor.add_title_slide(file_path, "My Presentation", "Created with Python")
+    print(f"Result: {result}")
+
+    # 2. Add content slide
+    print("\n2. Adding content slide...")
+    result = editor.add_slide(file_path, 1)
+    print(f"Result: {result}")
+
+    # 3. Add bullet points to slide 1
+    print("\n3. Adding bullet points...")
+    result = editor.add_bullet_points(
+        file_path, 1, "Main Content", ["First point", "Second point", "Third point"]
+    )
+    print(f"Result: {result}")
+
+    # 4. Add another slide
+    print("\n4. Adding another slide...")
+    result = editor.add_slide(file_path, 1)
+    print(f"Result: {result}")
+
+    # 5. Add text box to slide 2
+    print("\n5. Adding text box...")
     result = editor.add_text_box(
+        file_path,
         slide_index=2,
-        text="这是一个自定义文本框",
+        text="This is a custom text box",
         left=2,
         top=3,
         width=6,
         height=2,
         font_size=24,
-        font_color="FF0000"  # 红色
+        font_color="FF0000",
     )
-    print(f"结果: {result}")
-    
-    # 7. 添加形状
-    print("\n7. 添加形状...")
+    print(f"Result: {result}")
+
+    # 6. Add shape
+    print("\n6. Adding shape...")
     result = editor.add_shape(
+        file_path,
         slide_index=2,
         shape_type="rectangle",
         left=1,
         top=1,
         width=3,
         height=1.5,
-        fill_color="00FF00"  # 绿色
+        fill_color="00FF00",
     )
-    print(f"结果: {result}")
-    
-    # 8. 获取演示文稿信息
-    print("\n8. 获取演示文稿信息...")
-    result = editor.get_presentation_info()
-    print(f"结果: {result}")
-    
-    # 9. 保存演示文稿
-    print("\n9. 保存演示文稿...")
-    result = editor.save_presentation("example_presentation.pptx")
-    print(f"结果: {result}")
-    
-    print("\n演示完成！已创建 example_presentation.pptx 文件")
+    print(f"Result: {result}")
 
-    # 演示新功能
-    print("\n=== 演示新功能 ===")
+    # 7. Get presentation info
+    print("\n7. Getting presentation info...")
+    result = editor.get_presentation_info(file_path)
+    print(f"Result: {result}")
 
-    # 10. 复制幻灯片
-    print("\n10. 复制幻灯片...")
-    result = editor.duplicate_slide(0)  # 复制第一张幻灯片
-    print(f"结果: {result}")
+    # 8. Duplicate slide 0
+    print("\n8. Duplicating slide 0...")
+    result = editor.duplicate_slide(file_path, 0)
+    print(f"Result: {result}")
 
-    # 11. 添加表格
-    print("\n11. 添加表格...")
-    result = editor.add_table(slide_index=3, rows=3, cols=4, left=1, top=2, width=8, height=3)
-    print(f"结果: {result}")
+    # 9. Add table
+    print("\n9. Adding table...")
+    result = editor.add_table(
+        file_path, slide_index=2, rows=3, cols=4, left=1, top=2, width=8, height=3
+    )
+    print(f"Result: {result}")
 
-    # 12. 设置表格单元格文本
-    print("\n12. 设置表格单元格文本...")
-    result = editor.set_table_cell_text(slide_index=3, table_index=0, row=0, col=0, text="标题1")
-    print(f"结果: {result}")
+    # 10. Set table cell text
+    print("\n10. Setting table cell text...")
+    result = editor.set_table_cell_text(
+        file_path, slide_index=2, table_index=0, row=0, col=0, text="Header1"
+    )
+    print(f"Result: {result}")
+    result = editor.set_table_cell_text(
+        file_path, slide_index=2, table_index=0, row=0, col=1, text="Header2"
+    )
+    print(f"Result: {result}")
+    result = editor.set_table_cell_text(
+        file_path, slide_index=2, table_index=0, row=1, col=0, text="Data1"
+    )
+    print(f"Result: {result}")
+    result = editor.set_table_cell_text(
+        file_path, slide_index=2, table_index=0, row=1, col=1, text="Data2"
+    )
+    print(f"Result: {result}")
 
-    result = editor.set_table_cell_text(slide_index=3, table_index=0, row=0, col=1, text="标题2")
-    print(f"结果: {result}")
+    # 11. Set slide background color
+    print("\n11. Setting slide background color...")
+    result = editor.set_slide_background_color(file_path, slide_index=2, color="E6F3FF")
+    print(f"Result: {result}")
 
-    result = editor.set_table_cell_text(slide_index=3, table_index=0, row=1, col=0, text="数据1")
-    print(f"结果: {result}")
+    # 12. Get slide shapes info
+    print("\n12. Getting slide shapes info...")
+    result = editor.get_slide_shapes_info(file_path, slide_index=2)
+    print(f"Result: {result}")
 
-    result = editor.set_table_cell_text(slide_index=3, table_index=0, row=1, col=1, text="数据2")
-    print(f"结果: {result}")
-
-    # 13. 设置幻灯片背景颜色
-    print("\n13. 设置幻灯片背景颜色...")
-    result = editor.set_slide_background_color(slide_index=3, color="E6F3FF")  # 浅蓝色
-    print(f"结果: {result}")
-
-    # 14. 获取幻灯片形状信息
-    print("\n14. 获取幻灯片形状信息...")
-    result = editor.get_slide_shapes_info(slide_index=2)
-    print(f"结果: {result}")
-
-    # 15. 设置文本格式
-    print("\n15. 设置文本格式...")
+    # 13. Set text formatting
+    print("\n13. Setting text formatting...")
     result = editor.set_text_formatting(
+        file_path,
         slide_index=2,
-        shape_index=2,  # 文本框
+        shape_index=2,
         font_name="Arial",
         font_size=24,
-        font_color="FF0000",  # 红色
+        font_color="FF0000",
         bold=True,
-        italic=True
+        italic=True,
     )
-    print(f"结果: {result}")
+    print(f"Result: {result}")
 
-    # 16. 移动幻灯片
-    print("\n16. 移动幻灯片...")
-    result = editor.move_slide(from_index=3, to_index=1)  # 将第4张幻灯片移动到第2个位置
-    print(f"结果: {result}")
+    print(f"\nDemo complete! Presentation saved to: {file_path}")
 
-    # 17. 最终保存
-    print("\n17. 保存更新后的演示文稿...")
-    result = editor.save_presentation("enhanced_presentation.pptx")
-    print(f"结果: {result}")
-
-    print("\n增强功能演示完成！已创建 enhanced_presentation.pptx 文件")
 
 if __name__ == "__main__":
     main()
