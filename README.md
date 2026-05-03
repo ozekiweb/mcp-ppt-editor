@@ -1,106 +1,106 @@
-# PowerPoint编辑MCP Server
+# PowerPoint Editing MCP Server
 
-这是一个基于MCP (Model Context Protocol) 的PowerPoint编辑服务器，提供了创建和编辑PowerPoint演示文稿的完整功能，包括内容编辑、格式化和专业动画效果。
+This is a PowerPoint editing server based on MCP (Model Context Protocol) that provides comprehensive functionality for creating and editing PowerPoint presentations, including content editing, formatting, and professional animation effects.
 
-## ✨ 最新更新
+## ✨ Latest Updates
 
-- 🎬 **全新动画系统** - 添加了多种专业过渡动画效果
-- 🚀 **一键专业化** - 快速让演示文稿变得专业
-- 🎯 **智能推荐** - 优化工具描述，提高AI模型使用率
-- 🛠️ **便利函数** - 简化复杂操作，提供直观的参数接口
+- 🎬 **New Animation System** - Added multiple professional transition animation effects
+- 🚀 **One-Click Professionalization** - Quickly make presentations look professional
+- 🎯 **Smart Recommendations** - Optimized tool descriptions for better AI model usage
+- 🛠️ **Convenience Functions** - Simplified complex operations with intuitive parameter interfaces
 
-## 项目结构
+## Project Structure
 
-- `main.py` - MCP服务器主程序，处理MCP协议通信
-- `tool.py` - PowerPoint编辑器工具类，包含所有PPT编辑功能
-- `example.py` - 使用示例
-- `test_transitions.py` - 过渡动画功能测试
-- `transition_improvements_guide.md` - 动画功能改进指南
-- `requirements.txt` - 项目依赖
-- `mcp_config.json` - MCP客户端配置文件
+- `main.py` - MCP server main program, handles MCP protocol communication
+- `tool.py` - PowerPoint editor tool class, contains all PPT editing functionality
+- `example.py` - Usage examples
+- `test_transitions.py` - Transition animation feature tests
+- `transition_improvements_guide.md` - Animation feature improvement guide
+- `requirements.txt` - Project dependencies
+- `mcp_config.json` - MCP client configuration file
 
-## 功能特性
+## Features
 
-### 基础功能
-- 创建新的PowerPoint演示文稿
-- 打开现有的PowerPoint文件
-- 保存演示文稿
-- 获取演示文稿信息
+### Basic Features
+- Create new PowerPoint presentations
+- Open existing PowerPoint files
+- Save presentations
+- Get presentation information
 
-### 幻灯片操作
-- 添加新幻灯片（支持不同布局）
-- 删除幻灯片
-- 复制幻灯片
-- 移动幻灯片位置
-- 设置幻灯片背景颜色
+### Slide Operations
+- Add new slides (supports different layouts)
+- Delete slides
+- Duplicate slides
+- Move slide positions
+- Set slide background colors
 
-### 内容编辑
-- 添加文本框和文本内容
-- 添加标题幻灯片
-- 添加带项目符号的内容
-- 插入图片
-- 添加各种形状（矩形、椭圆、三角形等）
-- 添加表格
-- 设置表格单元格文本
+### Content Editing
+- Add text boxes and text content
+- Add title slides
+- Add bulleted content
+- Insert images
+- Add various shapes (rectangle, oval, triangle, etc.)
+- Add tables
+- Set table cell text
 
-### 格式化功能
-- 设置文本格式（字体、大小、颜色、粗体、斜体、下划线）
-- 为形状添加超链接
-- 获取幻灯片中所有形状的详细信息
+### Formatting Features
+- Set text formatting (font, size, color, bold, italic, underline)
+- Add hyperlinks to shapes
+- Get detailed information about all shapes on a slide
 
-### 🎬 专业动画和过渡效果
-- **一键专业化** - 快速为整个演示文稿添加专业过渡效果
-- **多种动画风格** - 淡入淡出、推入、擦除、分割、缩放、百叶窗、溶解等8种效果
-- **智能速度控制** - 快速、中等、慢速三档速度选择
-- **自动播放支持** - 支持自动前进和点击前进
-- **批量应用** - 一次性为所有幻灯片设置统一动画
-- **便利函数** - 提供流畅过渡、动感效果等预设选项
+### 🎬 Professional Animations and Transitions
+- **One-Click Professionalization** - Quickly add professional transitions to the entire presentation
+- **Multiple Animation Styles** - Fade, push, wipe, split, zoom, blinds, dissolve, and 8 other effects
+- **Smart Speed Control** - Fast, medium, and slow speed options
+- **Auto-Advance Support** - Supports both auto-advance and click-to-advance
+- **Batch Application** - Apply uniform animations to all slides at once
+- **Convenience Functions** - Preset options for smooth transitions and dynamic effects
 
-## 安装依赖
+## Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 使用方法
+## Usage
 
-### 作为MCP Server运行
+### Running as an MCP Server
 
 ```bash
 python main.py
 ```
 
-### 直接使用PowerPointEditor类
+### Using the PowerPointEditor Class Directly
 
 ```python
 from tool import PowerPointEditor
 
-# 创建编辑器实例
+# Create an editor instance
 editor = PowerPointEditor()
 
-# 创建新演示文稿
+# Create a new presentation
 editor.create_presentation()
 
-# 添加标题幻灯片
-editor.add_title_slide("我的演示文稿", "副标题")
+# Add a title slide
+editor.add_title_slide("My Presentation", "Subtitle")
 
-# 保存文件
+# Save the file
 editor.save_presentation("my_presentation.pptx")
 ```
 
-### 运行示例
+### Running Examples
 
 ```bash
 python example.py
 ```
 
-### 测试动画功能
+### Testing Animation Features
 
 ```bash
 python test_transitions.py
 ```
 
-## 🎬 动画功能快速开始
+## 🎬 Animation Quick Start
 
 ```python
 from tool import PowerPointEditor
@@ -108,224 +108,224 @@ from tool import PowerPointEditor
 editor = PowerPointEditor()
 editor.create_presentation()
 
-# 添加几张幻灯片
-editor.add_title_slide("欢迎", "我的演示文稿")
-editor.add_title_slide("内容", "主要内容")
-editor.add_title_slide("结束", "谢谢观看")
+# Add a few slides
+editor.add_title_slide("Welcome", "My Presentation")
+editor.add_title_slide("Content", "Main Content")
+editor.add_title_slide("End", "Thank You")
 
-# 一键专业化 - 为所有幻灯片添加淡入淡出效果
+# One-click professionalization - add fade effect to all slides
 editor.make_presentation_professional()
 
-# 或者添加动感效果
+# Or add dynamic effects
 # editor.add_dynamic_effects()
 
-# 保存文件
+# Save the file
 editor.save_presentation("professional_presentation.pptx")
 ```
 
-## 🛠️ 可用工具
+## 🛠️ Available Tools
 
-### 🎬 动画和过渡工具（新增）
+### 🎬 Animation and Transition Tools (New)
 
 #### add_slide_animation
-为单张幻灯片添加动画过渡效果，让演示更生动有趣
-- `slide_index`: 幻灯片索引
-- `animation_style`: 动画风格（fade, push, wipe, zoom, split, blinds, dissolve, none）
-- `speed`: 动画速度（fast, medium, slow）
-- `auto_advance`: 是否自动切换到下一张
-- `auto_advance_seconds`: 自动切换延迟时间
+Add animation transition effects to a single slide to make presentations more engaging
+- `slide_index`: Slide index
+- `animation_style`: Animation style (fade, push, wipe, zoom, split, blinds, dissolve, none)
+- `speed`: Animation speed (fast, medium, slow)
+- `auto_advance`: Whether to automatically advance to the next slide
+- `auto_advance_seconds`: Auto-advance delay time
 
 #### make_presentation_dynamic
-为整个演示文稿添加统一的动画效果，制作专业演示文稿的重要步骤
-- `animation_style`: 统一的动画风格（默认fade）
-- `speed`: 动画速度（默认medium）
+Add uniform animation effects to the entire presentation — an important step in creating professional presentations
+- `animation_style`: Unified animation style (default: fade)
+- `speed`: Animation speed (default: medium)
 
 #### make_professional_presentation ⭐
-一键让演示文稿变得专业！自动为所有幻灯片添加优雅的淡入淡出过渡效果
-- 无参数，一键操作
+One-click professionalization! Automatically adds elegant fade transition effects to all slides
+- No parameters required
 
 #### add_smooth_transitions
-为演示文稿添加流畅的过渡动画，让幻灯片切换更加自然
-- 无参数，预设流畅效果
+Add smooth transition animations to the presentation for more natural slide switching
+- No parameters required, uses preset smooth effects
 
 #### add_dynamic_effects
-为演示文稿添加动感的过渡效果，让演示更有活力
-- 无参数，预设动感效果
+Add dynamic transition effects to the presentation for more energetic delivery
+- No parameters required, uses preset dynamic effects
 
 #### get_animation_options
-查看所有可用的幻灯片动画效果选项
-- 无参数
+View all available slide animation effect options
+- No parameters required
 
-### 📄 基础工具
+### 📄 Basic Tools
 
 #### 1. create_presentation
-创建新的PowerPoint演示文稿
+Create a new PowerPoint presentation
 
 #### 2. open_presentation
-打开现有的PowerPoint文件
-- `file_path`: 文件路径
+Open an existing PowerPoint file
+- `file_path`: File path
 
 #### 3. save_presentation
-保存演示文稿
-- `file_path`: 保存路径（可选）
+Save the presentation
+- `file_path`: Save path (optional)
 
-### 📝 内容编辑工具
+### 📝 Content Editing Tools
 
 #### 4. add_slide
-添加新幻灯片
-- `layout_index`: 布局索引（0=标题幻灯片，1=标题和内容）
+Add a new slide
+- `layout_index`: Layout index (0 = title slide, 1 = title and content)
 
 #### 5. add_text_box
-添加文本框
-- `slide_index`: 幻灯片索引
-- `text`: 文本内容
-- `left`, `top`, `width`, `height`: 位置和大小（英寸）
-- `font_size`: 字体大小
-- `font_color`: 字体颜色（十六进制）
+Add a text box
+- `slide_index`: Slide index
+- `text`: Text content
+- `left`, `top`, `width`, `height`: Position and size (in inches)
+- `font_size`: Font size
+- `font_color`: Font color (hexadecimal)
 
 #### 6. add_title_slide
-添加标题幻灯片
-- `title`: 标题
-- `subtitle`: 副标题（可选）
+Add a title slide
+- `title`: Title
+- `subtitle`: Subtitle (optional)
 
 #### 7. add_bullet_points
-添加项目符号内容
-- `slide_index`: 幻灯片索引
-- `title`: 标题
-- `bullet_points`: 项目符号列表
+Add bulleted content
+- `slide_index`: Slide index
+- `title`: Title
+- `bullet_points`: List of bullet points
 
 #### 8. add_image
-添加图片
-- `slide_index`: 幻灯片索引
-- `image_path`: 图片路径
-- `left`, `top`: 位置（英寸）
-- `width`, `height`: 大小（英寸，可选）
+Add an image
+- `slide_index`: Slide index
+- `image_path`: Image file path
+- `left`, `top`: Position (in inches)
+- `width`, `height`: Size (in inches, optional)
 
 #### 9. add_shape
-添加形状
-- `slide_index`: 幻灯片索引
-- `shape_type`: 形状类型（rectangle, oval, triangle, diamond, pentagon, hexagon, star, arrow）
-- `left`, `top`, `width`, `height`: 位置和大小（英寸）
-- `fill_color`: 填充颜色（十六进制）
+Add a shape
+- `slide_index`: Slide index
+- `shape_type`: Shape type (rectangle, oval, triangle, diamond, pentagon, hexagon, star, arrow)
+- `left`, `top`, `width`, `height`: Position and size (in inches)
+- `fill_color`: Fill color (hexadecimal)
 
 #### 10. add_table
-添加表格
-- `slide_index`: 幻灯片索引
-- `rows`: 表格行数
-- `cols`: 表格列数
-- `left`, `top`, `width`, `height`: 位置和大小（英寸）
+Add a table
+- `slide_index`: Slide index
+- `rows`: Number of rows
+- `cols`: Number of columns
+- `left`, `top`, `width`, `height`: Position and size (in inches)
 
 #### 11. set_table_cell_text
-设置表格单元格文本
-- `slide_index`: 幻灯片索引
-- `table_index`: 表格索引
-- `row`: 行索引
-- `col`: 列索引
-- `text`: 文本内容
+Set table cell text
+- `slide_index`: Slide index
+- `table_index`: Table index
+- `row`: Row index
+- `col`: Column index
+- `text`: Text content
 
-### 🎨 格式化和样式工具
+### 🎨 Formatting and Style Tools
 
 #### 12. set_slide_background_color
-设置幻灯片背景颜色
-- `slide_index`: 幻灯片索引
-- `color`: 背景颜色（十六进制）
+Set slide background color
+- `slide_index`: Slide index
+- `color`: Background color (hexadecimal)
 
 #### 13. add_hyperlink
-为形状添加超链接
-- `slide_index`: 幻灯片索引
-- `shape_index`: 形状索引
-- `url`: 超链接URL
-- `display_text`: 显示文本（可选）
+Add a hyperlink to a shape
+- `slide_index`: Slide index
+- `shape_index`: Shape index
+- `url`: Hyperlink URL
+- `display_text`: Display text (optional)
 
 #### 14. set_text_formatting
-设置文本格式
-- `slide_index`: 幻灯片索引
-- `shape_index`: 形状索引
-- `font_name`: 字体名称（可选）
-- `font_size`: 字体大小（可选）
-- `font_color`: 字体颜色（可选）
-- `bold`: 是否加粗（可选）
-- `italic`: 是否斜体（可选）
-- `underline`: 是否下划线（可选）
+Set text formatting
+- `slide_index`: Slide index
+- `shape_index`: Shape index
+- `font_name`: Font name (optional)
+- `font_size`: Font size (optional)
+- `font_color`: Font color (optional)
+- `bold`: Whether to bold (optional)
+- `italic`: Whether to italicize (optional)
+- `underline`: Whether to underline (optional)
 
-### 🔧 管理工具
+### 🔧 Management Tools
 
 #### 15. get_presentation_info
-获取演示文稿信息
+Get presentation information
 
 #### 16. delete_slide
-删除幻灯片
-- `slide_index`: 要删除的幻灯片索引
+Delete a slide
+- `slide_index`: Index of the slide to delete
 
 #### 17. duplicate_slide
-复制幻灯片
-- `slide_index`: 要复制的幻灯片索引
+Duplicate a slide
+- `slide_index`: Index of the slide to duplicate
 
 #### 18. move_slide
-移动幻灯片位置
-- `from_index`: 源位置索引
-- `to_index`: 目标位置索引
+Move a slide to a new position
+- `from_index`: Source position index
+- `to_index`: Target position index
 
 #### 19. get_slide_shapes_info
-获取幻灯片中所有形状的信息
-- `slide_index`: 幻灯片索引
+Get information about all shapes on a slide
+- `slide_index`: Slide index
 
-### 🎬 传统动画工具（向后兼容）
+### 🎬 Legacy Animation Tools (Backward Compatible)
 
 #### 20. set_slide_transition
-设置幻灯片过渡效果（推荐使用新的动画工具）
-- `slide_index`: 幻灯片索引
-- `transition_type`: 过渡类型（none, fade, push, wipe, split, zoom, blinds, dissolve）
-- `duration`: 过渡持续时间（秒）
-- `advance_on_click`: 是否点击前进
-- `advance_after_time`: 自动前进时间（秒，可选）
+Set slide transition effects (recommended to use the new animation tools instead)
+- `slide_index`: Slide index
+- `transition_type`: Transition type (none, fade, push, wipe, split, zoom, blinds, dissolve)
+- `duration`: Transition duration (seconds)
+- `advance_on_click`: Whether to advance on click
+- `advance_after_time`: Auto-advance time (seconds, optional)
 
 #### 21. get_available_transitions
-获取可用的过渡效果列表
-- 无参数
+Get a list of available transition effects
+- No parameters required
 
-## 💡 使用技巧
+## 💡 Usage Tips
 
-### 让AI更好地使用动画功能
+### Helping AI Use Animation Features More Effectively
 
-为了让AI模型更主动地使用动画功能，可以在对话中使用这些关键词：
+To encourage AI models to use animation features more proactively, use these keywords in your prompts:
 
-- **"让演示更专业"** → AI会调用 `make_professional_presentation`
-- **"添加动画效果"** → AI会使用 `add_slide_animation` 或 `make_presentation_dynamic`
-- **"让幻灯片切换更流畅"** → AI会调用 `add_smooth_transitions`
-- **"让演示更有活力"** → AI会使用 `add_dynamic_effects`
+- **"Make the presentation more professional"** → AI will call `make_professional_presentation`
+- **"Add animation effects"** → AI will use `add_slide_animation` or `make_presentation_dynamic`
+- **"Make slide transitions smoother"** → AI will call `add_smooth_transitions`
+- **"Make the presentation more dynamic"** → AI will use `add_dynamic_effects`
 
-### 推荐的工作流程
+### Recommended Workflow
 
-1. **创建内容** - 先添加所有幻灯片和内容
-2. **一键专业化** - 使用 `make_professional_presentation()` 快速添加过渡效果
-3. **个性化调整** - 根据需要为特定幻灯片设置不同的动画效果
-4. **预览和保存** - 保存文件并在PowerPoint中预览效果
+1. **Create content** - Add all slides and content first
+2. **One-click professionalization** - Use `make_presentation_professional()` to quickly add transitions
+3. **Personalize** - Set different animation effects for specific slides as needed
+4. **Preview and save** - Save the file and preview the effects in PowerPoint
 
-## ⚠️ 注意事项
+## ⚠️ Important Notes
 
-1. 确保安装了所有必需的依赖包（特别是 `lxml` 用于动画功能）
-2. 图片文件路径必须存在且可访问
-3. 幻灯片索引从0开始
-4. 颜色使用十六进制格式（如：000000表示黑色，FF0000表示红色）
-5. 位置和大小单位为英寸
-6. 动画效果需要在PowerPoint中打开文件才能看到完整效果
+1. Make sure all required dependencies are installed (especially `lxml` for animation features)
+2. Image file paths must exist and be accessible
+3. Slide indices start from 0
+4. Colors use hexadecimal format (e.g., 000000 for black, FF0000 for red)
+5. Position and size units are in inches
+6. Animation effects require opening the file in PowerPoint to see the full effect
 
-## 错误处理
+## Error Handling
 
-所有操作都包含错误处理，返回格式为：
+All operations include error handling and return responses in this format:
 ```json
 {
   "success": true/false,
-  "message": "操作结果消息",
-  "error": "错误信息（如果有）"
+  "message": "Operation result message",
+  "error": "Error message (if any)"
 }
 ```
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交Issue和Pull Request来改进这个项目！
+Issues and Pull Requests are welcome to help improve this project!
 
-## 📄 许可证
+## 📄 License
 
 MIT License
