@@ -11,3 +11,119 @@
 - [ ] !Edit my ppt "c:/temp/test2.pptx", Add bullet points to slide 0 using add_bullet_points with title="Main Content", and bullet_points=["First point", "Second point", "Third point"].
 - [ ] !Edit my ppt "c:/temp/test2.pptx", Set the background colour of slide 0 using set_slide_background_color to #c6c6ff
 - [ ] !Edit my ppt "c:/temp/test2.pptx", Add the image C:\Work\Video\1\Images\ozeki_logo_portable_web_white.jpg to the top right hand corner of the slide
+
+## Task List
+
+- [ ] !Edit my ppt "c:/temp/test3.pptx", add a content slide at index 0 using add_slide 
+- [ ] !Edit my ppt "c:/temp/test3.pptx", Add bullet points to slide 0 using add_bullet_points with title="Main Content", and bullet_points=["First point", "Second point", "Third point"].
+- [ ] !Edit my ppt "c:/temp/test3.pptx", apply slide template with template_id "agenda_slide", color_scheme "modern_blue"
+- [ ] !Edit my ppt "c:/temp/test3.pptx", add_slide_animation to slide 0, animation style: "push", with medium speed
+
+-------
+
+## Context
+
+Work with ppt file "c:/temp/test3.pptx"
+and you are working on slide 0
+
+## Task List
+
+- [ ] add a content slide at index 0 using add_slide 
+- [ ] apply slide template with template_id "agenda_slide", color_scheme "modern_blue"
+- [ ] Add bullet point with "First point", "Second point", "Third point" items
+- [ ] Replace the title called "Agenda" on slide 0 to "Table of Contents"
+- [ ] Auto-optimize text to auto_resize
+
+
+-------
+
+## Context
+
+Work with ppt file "c:/temp/test5.pptx"
+and you are working on slide 0
+
+## Task List
+
+- [ ] add a content slide at index 0 using add_slide with title "Table of Content"
+- [ ] Add bullet points to slide 0 using add_bullet_points "First point", "Second point", "Third point".
+- [ ] Set the background colour of slide 0 using set_slide_background_color to #c6c6ff
+- [ ] Save slide 0 as png with width 1920 height 1080, to "c:/temp/test5.png"
+
+
+-------
+
+## Context
+
+Work with ppt file "c:/temp/test4.pptx"
+and you are working on slide 0
+
+## Task List
+- [ ] create_slide_from_template, "agenda_slide", color_scheme "modern_blue", content: title= "Table of Contents", bulletpoints = "First point; Second point; "Third point"
+
+
+Auto-optimize text on a slide (adjust font sizes and line spacing).
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `file_path` | string | Yes | — | Full path to the .pptx file |
+| `slide_index` | integer | Yes | — | Slide index (0-based) |
+| `auto_resize` | boolean | No | true | Automatically resize fonts to fit |
+| `min_font_size` | integer | No | 8 | Minimum font size (points) |
+| `max_font_size` | integer | No | 36 | Maximum font size (points) |
+
+- [ ] add_slide_animation to slide 0, animation style: "push", with medium speed
+
+
+#### apply_slide_template
+Apply a template to an existing slide with optional color scheme and content mapping.
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `file_path` | string | Yes | — | Full path to the .pptx file |
+| `slide_index` | integer | Yes | — | Slide index (0-based) |
+| `template_id` | string | Yes | — | Template ID |
+| `color_scheme` | string | No | "modern_blue" | Color scheme name |
+| `content_mapping` | object | No | — | Map of element roles to custom text content |
+| `image_paths` | object | No | — | Map of element roles to image file paths |
+
+#### add_slide_animation
+Add animation transition effects to a single slide.
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `file_path` | string | Yes | — | Full path to the .pptx file |
+| `slide_index` | integer | Yes | — | Slide index (0-based) |
+| `animation_style` | string | No | "fade" | Animation style: fade, push, wipe, zoom, split, blinds, dissolve, none |
+| `speed` | string | No | "medium" | Animation speed: fast, medium, slow |
+| `auto_advance` | boolean | No | false | Auto-advance to next slide |
+| `auto_advance_seconds` | number | No | 3.0 | Auto-advance delay (seconds) |
+
+
+title_slide (Dynamic Title Slide), 
+text_with_image (Dynamic Text + Image), 
+two_column_text (Two Columns of Text), 
+two_column_text_images (Two Columns Text + Images), 
+three_column_layout (Three Columns Text + Images), 
+agenda_slide (Agenda/Directory Page), 
+chapter_intro (Chapter Introduction Page), 
+thank_you_slide (Thank You/End Page), 
+timeline_slide (Timeline Page), 
+data_table_slide (Data Table Page), 
+chart_comparison (Chart Comparison Page), 
+full_image_slide (Full Image with Overlay Text), 
+process_flow (Process Flow Diagram),
+quote_testimonial (Quote/Testimonial Slide), 
+key_metrics_dashboard (KPI Dashboard), 
+before_after_comparison (Before/After Comparison), 
+team_introduction (Team Introduction), 
+minimalist_hero (Minimalist Hero Slide), 
+neon_cyberpunk (Neon Cyberpunk Slide), 
+nature_organic (Organic Nature Slide), 
+interactive_poll (Interactive Poll Slide), 
+split_screen_comparison (Split Screen Comparison), 
+and product_showcase (Product Showcase). 
+ 
+Available color schemes are: 
+modern_blue, 
+corporate_gray, elegant_green, 
+warm_red, 
+pastel_dream, nature_earth, 
+neon_vibrant, 
+and minimalist_mono.
